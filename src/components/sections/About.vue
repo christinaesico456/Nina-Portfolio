@@ -1,116 +1,102 @@
 <template>
-  <section id="about" class="relative overflow-hidden bg-transparent section-container">
-    <!-- Animated Background Elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <!-- Gradient Orbs -->
-      <div class="absolute rounded-full top-20 right-10 w-72 h-72 bg-neutral-200 mix-blend-multiply filter blur-3xl opacity-20 animate-blob-slow"></div>
-      <div class="absolute rounded-full bottom-20 left-10 w-80 h-80 bg-neutral-300 mix-blend-multiply filter blur-3xl opacity-20 animate-blob-slow animation-delay-3000"></div>
-      
-      <!-- Subtle grid pattern background -->
-      <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 24px 24px;"></div>
-    </div>
-    
-    <div class="relative max-w-5xl mx-auto">
-      <!-- Section Header - Redesigned -->
-      <div class="mb-16">
-        <div class="inline-flex items-center gap-3 px-4 py-2 mb-6 rounded-full shadow-sm bg-white/60 backdrop-blur-sm">
-          <div class="w-2 h-2 rounded-full bg-primary-600 animate-pulse"></div>
-          <span class="text-sm font-medium tracking-wide uppercase text-primary-700">Get to know me</span>
-        </div>
-        <h2 class="text-3xl font-bold md:text-4xl text-neutral-900">
-          About Me
+  <section id="about" class="relative overflow-hidden bg-white">
+    <!-- Decorative left accent -->
+    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#dab996] to-transparent opacity-40"></div>
+
+
+    <div class="max-w-5xl mx-auto section-container">
+      <!-- Header -->
+      <div class="mb-16 reveal">
+        <span class="inline-flex mb-5 section-pill">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/></svg>
+          Get to know me
+        </span>
+        <h2 class="text-4xl font-black leading-tight md:text-5xl text-neutral-900">
+          About <span class="italic text-[#a86d42]">Me</span>
         </h2>
       </div>
 
-      <!-- Main Content - Redesigned Layout -->
-      <div class="grid gap-8 lg:grid-cols-3">
-        <!-- Left Column - Introduction (spans 2 columns) -->
-        <div class="space-y-8 lg:col-span-2">
-          <!-- Introduction Text -->
-          <div class="p-8 border shadow-sm rounded-2xl bg-white/60 backdrop-blur-md border-neutral-200/60">
-            <p class="text-lg leading-relaxed text-neutral-700">
+
+      <div class="grid gap-10 lg:grid-cols-5">
+        <!-- Left: Intro + CTA (3 cols) -->
+        <div class="space-y-6 lg:col-span-3">
+          <!-- Intro card -->
+          <div class="reveal reveal-delay-1 relative p-8 rounded-2xl border border-neutral-100
+            bg-gradient-to-br from-[#faf8f5] to-white
+            shadow-[0_2px_24px_rgba(0,0,0,0.05)]">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-[#f4e9de] rounded-bl-[3rem] rounded-tr-2xl opacity-60"></div>
+            <p class="relative text-lg leading-relaxed text-neutral-700" style="font-family:'DM Sans',sans-serif">
               {{ data.about.introduction }}
             </p>
           </div>
 
-          <!-- Highlights Grid -->
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div 
-              v-for="(highlight, index) in data.about.highlights" 
-              :key="index"
-              class="relative p-5 overflow-hidden transition-all duration-300 border bg-white/60 backdrop-blur-md group rounded-xl border-neutral-200/60 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100/50"
+
+          <!-- Highlights -->
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div
+              v-for="(highlight, i) in data.about.highlights"
+              :key="i"
+              class="reveal p-4 rounded-xl border border-neutral-100 bg-white hover:border-[#dab996]
+                hover:shadow-md transition-all duration-300 group flex items-start gap-3"
+              :class="`reveal-delay-${i + 1}`"
             >
-              <div class="absolute top-0 right-0 w-20 h-20 transition-opacity rounded-bl-full opacity-0 bg-primary-100/30 group-hover:opacity-100"></div>
-              <div class="relative flex items-start gap-3">
-                <div class="flex items-center justify-center flex-shrink-0 w-10 h-10 transition-colors rounded-lg bg-primary-100 group-hover:bg-primary-200">
-                  <svg class="w-5 h-5 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-                  </svg>
-                </div>
-                <span class="flex-1 pt-1.5 text-neutral-700">{{ highlight }}</span>
+              <div class="w-5 h-5 rounded-full bg-[#f4e9de] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#a86d42] transition-colors duration-300">
+                <svg class="w-3 h-3 text-[#a86d42] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
               </div>
+              <span class="text-sm leading-snug text-neutral-700" style="font-family:'DM Sans',sans-serif">{{ highlight }}</span>
             </div>
           </div>
 
-          <!-- Call to Action - Moved and redesigned -->
-          <div class="p-8 border shadow-sm rounded-2xl bg-white/60 backdrop-blur-md border-primary-200/40">
-            <div class="flex items-start justify-between gap-6">
-              <div class="flex-1">
-                <h3 class="mb-2 text-lg font-semibold text-neutral-900">Ready to collaborate?</h3>
-                <p class="text-neutral-600">
-                  I'm actively seeking internship opportunities where I can contribute to real-world projects and grow as a developer.
-                </p>
-              </div>
-              <a href="#contact" class="flex-shrink-0 px-6 py-3 font-medium transition-all duration-300 rounded-xl bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-200 hover:-translate-y-0.5">
-                Let's Connect
-              </a>
+
+          <!-- CTA -->
+          <div class="reveal reveal-delay-3 p-6 rounded-2xl border border-[#e9d3bc] bg-[#faf5f0] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <h3 class="mb-1 text-base font-semibold text-neutral-900">Ready to collaborate?</h3>
+              <p class="text-sm text-neutral-500" style="font-family:'DM Sans',sans-serif">Seeking internship opportunities to grow as a developer.</p>
             </div>
+            <a href="#contact" class="flex-shrink-0 btn-primary whitespace-nowrap">Let's Connect</a>
           </div>
         </div>
 
-        <!-- Right Column - Interests & Learning -->
-        <div class="space-y-8 lg:col-span-1">
+
+        <!-- Right: Interests + Learning (2 cols) -->
+        <div class="space-y-6 lg:col-span-2">
           <!-- Interests -->
-          <div class="p-6 border shadow-sm bg-white/60 backdrop-blur-md rounded-2xl border-neutral-200/60">
-            <div class="flex items-center gap-2 mb-5">
-              <div class="w-1 h-6 rounded-full bg-primary-600"></div>
-              <h3 class="text-lg font-semibold text-neutral-900">
-                Interests
-              </h3>
+          <div class="reveal reveal-delay-2 p-6 rounded-2xl border border-neutral-100 bg-white shadow-[0_2px_24px_rgba(0,0,0,0.04)]">
+            <div class="flex items-center gap-2 mb-4">
+              <div class="w-1 h-5 rounded-full bg-[#a86d42]"></div>
+              <h3 class="font-semibold text-neutral-900">Interests</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span 
-                v-for="(interest, index) in data.about.interests" 
-                :key="index"
-                class="px-3 py-1.5 text-sm font-medium transition-all duration-200 border rounded-lg bg-neutral-50 text-neutral-700 border-neutral-200 hover:border-primary-400 hover:bg-primary-50 hover:text-primary-700"
+              <span
+                v-for="(interest, i) in data.about.interests"
+                :key="i"
+                class="px-3 py-1.5 text-xs font-medium rounded-full border border-neutral-200
+                  bg-neutral-50 text-neutral-700 hover:border-[#a86d42] hover:bg-[#faf5f0]
+                  hover:text-[#a86d42] transition-all duration-200 cursor-default"
+                style="font-family:'DM Sans',sans-serif"
               >
                 {{ interest }}
               </span>
             </div>
           </div>
 
-          <!-- Currently Learning -->
-          <div class="p-6 text-white border shadow-lg rounded-2xl bg-gradient-to-br from-primary-600 to-primary-700 border-primary-700">
+
+          <!-- Currently Learning — dark card -->
+          <div class="p-6 text-white reveal reveal-delay-3 rounded-2xl bg-neutral-900">
             <div class="flex items-center gap-2 mb-5">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-[#dab996]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
-              <h4 class="text-sm font-semibold tracking-wide uppercase opacity-90">
-                Learning Now
-              </h4>
+              <span class="text-xs tracking-widest uppercase text-neutral-400" style="font-family:'DM Sans',sans-serif">Learning Now</span>
             </div>
-            <div class="space-y-3">
-              <div class="flex items-start gap-3 p-3 transition-all duration-200 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20">
-                <div class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-white"></div>
-                <span class="text-sm leading-relaxed">Advanced Vue.js patterns</span>
-              </div>
-              <div class="flex items-start gap-3 p-3 transition-all duration-200 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20">
-                <div class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-white"></div>
-                <span class="text-sm leading-relaxed">Full-stack development</span>
-              </div>
-              <div class="flex items-start gap-3 p-3 transition-all duration-200 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20">
-                <div class="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-white"></div>
-                <span class="text-sm leading-relaxed">Artificial Intelligence</span>
+            <div class="space-y-2">
+              <div v-for="item in learningItems" :key="item"
+                class="flex items-center gap-3 p-3 transition-colors duration-200 rounded-xl bg-white/5 hover:bg-white/10">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#dab996] flex-shrink-0"></div>
+                <span class="text-sm text-neutral-300" style="font-family:'DM Sans',sans-serif">{{ item }}</span>
               </div>
             </div>
           </div>
@@ -120,45 +106,26 @@
   </section>
 </template>
 
+
 <script setup>
+import { onMounted } from 'vue'
 import { portfolioData } from '../../data/portfolio.js'
 
+
 const data = portfolioData
+
+
+const learningItems = ['Advanced Vue.js patterns', 'Full-stack development', 'Artificial Intelligence']
+
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'))
+    return
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } })
+  }, { threshold: 0.12 })
+  document.querySelectorAll('#about .reveal').forEach(el => observer.observe(el))
+})
 </script>
-
-<style scoped>
-/* Slow blob animation for background orbs */
-@keyframes blob-slow {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(20px, -30px) scale(1.05);
-  }
-  66% {
-    transform: translate(-15px, 15px) scale(0.95);
-  }
-}
-
-.animate-blob-slow {
-  animation: blob-slow 10s infinite;
-}
-
-.animation-delay-3000 {
-  animation-delay: 3s;
-}
-
-/* Pulse for dot */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-</style>

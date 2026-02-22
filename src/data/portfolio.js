@@ -1,29 +1,26 @@
 export const portfolioData = {
   personal: {
     name: "Nina",
-    role: "Computer Science Student ",
+    role: "Computer Science Student",
     tagline: "Aspiring Software Engineer | with Specialization in Intelligent Systems",
     profileImage: "/imageME.jpeg",
-    resumeURL: "/resume.pdf",
+    resumeUrl: "/Esico_Resume.pdf",
     facebook: "https://www.facebook.com/nina.esico/",
     instagram: "https://www.instagram.com/nnaasco/",
     email: "christinaesico456@gmail.com",
     github: "https://github.com/christinaesico456",
     linkedin: "https://www.linkedin.com/in/christina-esico-5b066b394/",
   },
-
   about: {
-    introduction: `I'm a 3rd-year Computer Science student passionate about creating efficient, 
-    user-centered software solutions. My journey in programming has taught me that great code 
-    isn't just about syntax—it's about solving real problems and continuous learning.`,
-    
+    introduction: `I'm a 3rd-year Computer Science student passionate about creating efficient,
+ user-centered software solutions. My journey in programming has taught me that great code
+ isn't just about syntax—it's about solving real problems and continuous learning.`,
     highlights: [
       "Strong foundation in Python",
       "Experience with Front-End web development",
       "Quick learner with a collaborative mindset",
       "Willingness to take on challenges and adapt to new technologies"
     ],
-    
     interests: [
       "Software Development",
       "Artificial Intelligence",
@@ -31,35 +28,45 @@ export const portfolioData = {
       "UI/UX Design"
     ]
   },
-  
-    skills: {
-        "Programming Languages": [
-        "JavaScript",
-        "Python", 
-        "Java",
-        "HTML/CSS"
+  skills: {
+    "Programming Languages": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "SQL",
+      "HTML",
+      "CSS",
+      "Tailwind CSS"
     ],
-        "Frameworks & Libraries": [
-        "Vue.js",
-        "React",
-        "Tailwind CSS",
-        "Node.js"
+    "Frameworks & Libraries": [
+      "Vue.js",
+      "React",
+      "Django",
+      "Flask",
+      "Vite"
     ],
-        "Tools & Technologies": [
-        "Git & GitHub",
-        "VS Code",
-        "Figma",
-        "MySQL"
+    "Developer Tools": [
+      "Git & GitHub",
+      "Visual Studio",
+      "MySQL Workbench",
+      "Firebase",
+      "Vercel",
+      "MS Access",
+      "Railway"
+    ],
+    "Multimedia Tools": [
+      "Figma",
+      "Canva",
+      "Capcut"
     ]
-},
-
+  },
   projects: [
     {
       id: 1,
       title: "Bean There",
-      description: "a web-based application that promotes and showcase different cafés in Dasmariñas, Cavite.",
-      tech: ["Vue.js", "Tailwind CSS", "Django, My"],
-      problem: "Students need a simple way to track assignments and deadlines without complex tools.",
+      description: "A web-based application that promotes and showcases different cafés in Dasmariñas, Cavite.",
+      tech: ["Vue.js", "Tailwind CSS", "Django", "MySQL"],
+      problem: "Locals and students needed a simple way to discover and explore cafés nearby without cluttered interfaces.",
       github: "https://github.com/yourusername/project",
       demo: "",
       featured: true
@@ -67,23 +74,22 @@ export const portfolioData = {
     {
       id: 2,
       title: "VeriFeed: A Real-Time Deepfake Video Detector on Facebook",
-      description: "Develop and execute browser extension designed for real-time deepfake video detection on Facebook.",
+      description: "Browser extension designed for real-time deepfake video detection on Facebook.",
       tech: ["Python", "Flask", "Vue.js", "Tailwind CSS", "MySQL"],
-      problem: "Quick access to weather information without cluttered interfaces.",
+      problem: "Users needed a way to identify manipulated videos on social media in real time without leaving the platform.",
       github: "https://github.com/yourusername/project",
       featured: true
     },
     {
       id: 3,
       title: "Mooji: Gamified Health Tracking App",
-      description: "Figma Prototype for gamified health tracking app with Presented at Fresh START Hackathon, an event of the University Student Government of De La Salle University-Dasmariñas.",
+      description: "Figma prototype for a gamified health tracking app. Presented at Fresh START Hackathon at De La Salle University-Dasmariñas.",
       tech: ["Figma"],
-      problem: "Students need to project final grades based on current performance.",
+      problem: "Students needed a fun, engaging way to track daily health habits without feeling overwhelmed.",
       github: "https://github.com/yourusername/project",
       featured: true
     }
   ],
-
   education: [
     {
       degree: "Bachelor of Science in Computer Science with Specialization in Intelligent Systems",
@@ -95,11 +101,10 @@ export const portfolioData = {
       ]
     }
   ],
-
   certifications: [
     {
       name: "JavaScript Essentials 1",
-      issuer:  "CISCO Networking Academy",
+      issuer: "CISCO Networking Academy",
       date: "May 20, 2025"
     }
   ]
