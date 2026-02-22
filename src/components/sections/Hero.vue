@@ -10,10 +10,10 @@
       :style="{ transform: `translateY(${parallaxY}px)` }"
     >
       <!-- Large warm gradient blob -->
-      <div class="absolute -top-32 -right-32 w-[700px] h-[700px] rounded-full"
+      <div class="absolute rounded-full -top-32 -right-32 w-175 h-175"
         style="background: radial-gradient(circle, rgba(188,132,85,0.12) 0%, rgba(188,132,85,0.04) 50%, transparent 70%);">
       </div>
-      <div class="absolute -bottom-48 -left-24 w-[500px] h-[500px] rounded-full"
+      <div class="absolute rounded-full -bottom-48 -left-24 w-125 h-125"
         style="background: radial-gradient(circle, rgba(168,109,66,0.08) 0%, transparent 70%);">
       </div>
       <!-- Fine dot grid -->
@@ -22,56 +22,50 @@
       </div>
     </div>
 
-
     <!-- Decorative editorial line top-left -->
     <div class="absolute flex-col items-center hidden gap-2 pointer-events-none top-28 left-8 md:left-16 md:flex opacity-30">
       <div class="w-px h-16 bg-[#a86d42]"></div>
       <span class="text-[10px] tracking-[0.3em] uppercase text-[#a86d42] rotate-90 translate-y-8" style="font-family:'DM Sans',sans-serif">scroll</span>
     </div>
 
-
     <!-- Content -->
     <div class="relative z-10 w-full text-center section-container lg:text-left">
       <div class="max-w-5xl mx-auto lg:mx-0">
 
-
         <!-- Availability badge -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-2 mb-10 rounded-full border border-[#e9d3bc] bg-[#faf5f0] opacity-0 animate-in-badge">
-          <span class="flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 mb-10 rounded-full border border-[#e9d3bc] bg-[#faf5f0] animate-in-badge">
+          <span class="w-2 h-2 rounded-full shrink-0 bg-emerald-500 animate-pulse"></span>
           <span class="text-xs font-medium tracking-wide text-neutral-600" style="font-family:'DM Sans',sans-serif">
             Available for OJT / Internship
           </span>
         </div>
 
-
         <!-- Main headline — staggered reveal -->
         <div class="mb-2 overflow-hidden">
-          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight text-neutral-900 translate-y-full opacity-0 animate-in-h1-1">
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight text-neutral-900 animate-in-h1-1">
             Hi, I'm
           </h1>
         </div>
         <div class="mb-6 overflow-hidden">
-          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#a86d42] italic translate-y-full opacity-0 animate-in-h1-2">
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight text-[#a86d42] italic animate-in-h1-2">
             {{ data.personal.name }}
           </h1>
         </div>
 
-
         <!-- Role & Tagline -->
         <div class="mb-3 overflow-hidden">
-          <p class="text-lg font-medium translate-y-8 opacity-0 md:text-xl text-neutral-500 animate-in-sub" style="font-family:'DM Sans',sans-serif">
+          <p class="text-lg font-medium md:text-xl text-neutral-500 animate-in-sub" style="font-family:'DM Sans',sans-serif">
             {{ data.personal.role }}
           </p>
         </div>
         <div class="mb-12 overflow-hidden">
-          <p class="max-w-xl text-base translate-y-8 opacity-0 md:text-lg text-neutral-400 animate-in-sub2" style="font-family:'DM Sans',sans-serif; animation-delay: 0.7s">
+          <p class="max-w-xl text-base md:text-lg text-neutral-400 animate-in-sub2" style="font-family:'DM Sans',sans-serif; animation-delay: 0.7s">
             {{ data.personal.tagline }}
           </p>
         </div>
 
-
         <!-- CTA Buttons -->
-        <div class="flex flex-col items-center justify-center gap-4 mb-16 opacity-0 sm:flex-row lg:justify-start animate-in-cta">
+        <div class="flex flex-col items-center justify-center gap-4 mb-16 sm:flex-row lg:justify-start animate-in-cta">
           <a
             href="#projects"
             ref="magnetBtn"
@@ -89,9 +83,8 @@
           </a>
         </div>
 
-
         <!-- Social Links -->
-        <div class="flex items-center justify-center gap-5 opacity-0 lg:justify-start animate-in-social">
+        <div class="flex items-center justify-center gap-5 lg:justify-start animate-in-social">
           <a :href="data.personal.github" target="_blank" rel="noopener noreferrer"
             class="text-neutral-400 hover:text-neutral-900 transition-all duration-300 hover:-translate-y-0.5"
             aria-label="GitHub">
@@ -114,13 +107,11 @@
             </svg>
           </a>
 
-
           <div class="w-16 h-px ml-1 bg-neutral-300"></div>
           <span class="text-xs tracking-wider text-neutral-400" style="font-family:'DM Sans',sans-serif">Connect</span>
         </div>
       </div>
     </div>
-
 
     <!-- Scroll indicator -->
     <div class="absolute flex flex-col items-center gap-2 -translate-x-1/2 bottom-8 left-1/2 animate-bounce-gentle opacity-60">
@@ -132,29 +123,24 @@
   </section>
 </template>
 
-
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { portfolioData } from '../../data/portfolio.js'
-
 
 const data = portfolioData
 const heroRef = ref(null)
 const parallaxY = ref(0)
 const magnetBtn = ref(null)
 
-
 const handleScroll = () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
   parallaxY.value = window.scrollY * 0.25
 }
 
-
 // Magnetic button effect
 const setupMagnet = () => {
   const btn = magnetBtn.value
   if (!btn) return
-
 
   btn.addEventListener('mousemove', (e) => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -164,12 +150,10 @@ const setupMagnet = () => {
     btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) translateY(-2px)`
   })
 
-
   btn.addEventListener('mouseleave', () => {
     btn.style.transform = 'translate(0, 0)'
   })
 }
-
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true })
@@ -177,7 +161,6 @@ onMounted(() => {
 })
 onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 </script>
-
 
 <style scoped>
 @keyframes in-badge {
@@ -201,7 +184,6 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   50%       { transform: translateX(-50%) translateY(6px); }
 }
 
-
 .animate-in-badge  { animation: in-badge 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s both; }
 .animate-in-h1-1   { animation: in-h1   0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both; }
 .animate-in-h1-2   { animation: in-h1   0.8s cubic-bezier(0.16,1,0.3,1) 0.35s both; }
@@ -210,11 +192,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .animate-in-cta    { animation: in-fade 0.7s ease 0.9s both; }
 .animate-in-social { animation: in-fade 0.7s ease 1.1s both; }
 
-
 .animate-bounce-gentle {
   animation: bounce-gentle 2.5s ease-in-out infinite;
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   [class*="animate-in"],
@@ -225,5 +205,3 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   }
 }
 </style>
-
-

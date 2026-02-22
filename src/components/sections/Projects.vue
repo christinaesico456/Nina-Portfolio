@@ -1,7 +1,7 @@
 <template>
   <section id="projects" class="relative overflow-hidden bg-white">
     <!-- Subtle right accent -->
-    <div class="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#dab996] to-transparent opacity-30"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-1 bg-linear-to-b from-transparent via-[#dab996] to-transparent opacity-30"></div>
 
 
     <div class="max-w-6xl mx-auto section-container">
@@ -30,7 +30,7 @@
           v-for="(project, i) in featuredProjects"
           :key="project.id"
           class="reveal tilt-card shine group relative overflow-hidden rounded-2xl border border-neutral-100
-            bg-gradient-to-br from-[#faf8f5] to-white p-8 md:p-10
+            bg-linear-to-br from-[#faf8f5] to-white p-8 md:p-10
             hover:border-[#dab996] hover:shadow-[0_8px_40px_rgba(168,109,66,0.12)]
             transition-all duration-500 cursor-default"
           :class="`reveal-delay-${i + 1}`"
@@ -70,7 +70,7 @@
 
 
             <!-- Links -->
-            <div class="flex items-center flex-shrink-0 gap-2">
+            <div class="flex items-center gap-2 shrink-0">
               <a v-if="project.demo" :href="project.demo" target="_blank" rel="noopener noreferrer"
                 class="flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-full
                   border border-neutral-200 text-neutral-600 hover:border-[#a86d42] hover:text-[#a86d42]
@@ -84,7 +84,7 @@
               </a>
               <a :href="project.github" target="_blank" rel="noopener noreferrer"
                 class="flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-full
-                  border border-neutral-200 text-neutral-600 hover:border-neutral-900 hover:text-neutral-900
+                  border border-neutral-200 text-neutral-600 hover:border-neutral-900
                   hover:bg-neutral-900 hover:text-white transition-all duration-200"
                 style="font-family:'DM Sans',sans-serif"
                 @click.stop>
@@ -105,7 +105,7 @@
 
           <!-- Problem solved -->
           <div class="flex items-start gap-3 p-4 bg-white border rounded-xl border-neutral-100">
-            <div class="w-1.5 h-1.5 rounded-full bg-[#a86d42] mt-2 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-[#a86d42] mt-2 shrink-0"></div>
             <div>
               <span class="text-xs font-semibold tracking-wider uppercase text-[#8c5835] block mb-1"
                 style="font-family:'DM Sans',sans-serif">Problem Solved</span>
@@ -137,7 +137,7 @@
             <div class="flex items-start justify-between mb-3">
               <h4 class="font-semibold text-neutral-900">{{ project.title }}</h4>
               <a :href="project.github" target="_blank" rel="noopener noreferrer"
-                class="flex-shrink-0 ml-2 transition-colors duration-200 text-neutral-400 hover:text-neutral-900">
+                class="ml-2 transition-colors duration-200 shrink-0 text-neutral-400 hover:text-neutral-900">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                 </svg>
@@ -212,3 +212,5 @@ onMounted(() => {
   document.querySelectorAll('#projects .reveal').forEach(el => observer.observe(el))
 })
 </script>
+
+
