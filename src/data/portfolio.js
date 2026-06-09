@@ -105,7 +105,32 @@ export const portfolioData = {
     {
       name: "JavaScript Essentials 1",
       issuer: "CISCO Networking Academy",
-      date: "May 20, 2025"
+      date: "May 2025",
+      image: "/certificates/cert-javascript.jpg"
+    },
+    {
+      name: "Hackathon Participation",
+      issuer: "Fresh START: Sustainable for a Renewable Technology",
+      date: "Nov 2024",
+      image: "/certificates/cert-hackathon.jpg"
+    },
+    {
+      name: "International Conference on Artificial Intelligence 2026",
+      issuer: "De La Salle University - Dasmariñas",
+      date: "Feb 2026",
+      image: "/certificates/cert-icai.jpg"
+    },
+    {
+      name: "Introduction to Modern AI",
+      issuer: "CISCO Networking Academy",
+      date: "Feb 2026",
+      image: "/certificates/cert-modern-ai.jpg"
+    },
+    {
+      name: "AI Ready ASEAN – AI Learning Modules (12 hrs)",
+      issuer: "ASEAN Foundation / Google.org",
+      date: "May 2026",
+      image: "/certificates/cert-asean.jpg"
     }
   ]
 }

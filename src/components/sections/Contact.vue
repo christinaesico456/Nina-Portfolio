@@ -42,7 +42,7 @@
                 <div class="absolute w-4 h-4 border-2 border-white rounded-full -bottom-1 -right-1 bg-emerald-400"></div>
               </div>
               <div>
-                <h3 class="font-bold text-neutral-900">{{ data.personal.name }}</h3>
+                <h3 class="font-bold text-neutral-900">Christina M. Esico</h3>
                 <p class="text-sm text-neutral-500" style="font-family:'DM Sans',sans-serif">{{ data.personal.role }}</p>
                 <p class="text-xs text-neutral-400 mt-0.5" style="font-family:'DM Sans',sans-serif">Response within 24h</p>
               </div>
